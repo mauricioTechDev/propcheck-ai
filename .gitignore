@@ -1,0 +1,4 @@
+bin/
+dist/
+.propcheck-ai.json
+coverage.out
