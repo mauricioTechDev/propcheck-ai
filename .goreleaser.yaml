@@ -1,0 +1,51 @@
+version: 2
+
+project_name: propcheck-ai
+
+builds:
+  - id: propcheck-ai
+    main: .
+    binary: propcheck-ai
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w -X github.com/mauricioTechDev/propcheck-ai/cmd.version={{.Version}}
+    goos:
+      - darwin
+      - linux
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ignore:
+      - goos: windows
+        goarch: arm64
+
+archives:
+  - id: default
+    formats:
+      - tar.gz
+    format_overrides:
+      - goos: windows
+        formats:
+          - zip
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+checksum:
+  name_template: "checksums.txt"
+  algorithm: sha256
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
+
+release:
+  github:
+    owner: mauricioTechDev
+    name: propcheck-ai
+  draft: false
+  prerelease: auto
