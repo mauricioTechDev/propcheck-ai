@@ -95,6 +95,28 @@ Checks: property_picked events, test runs during VALIDATE, shrink analysis when 
 
 ## Installation
 
+### One-liner (macOS / Linux)
+
+```bash
+curl -sSL https://raw.githubusercontent.com/mauricioTechDev/propcheck-ai/main/install.sh | sh
+```
+
+Install to a custom directory:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/mauricioTechDev/propcheck-ai/main/install.sh | INSTALL_DIR=~/.local/bin sh
+```
+
+Install a specific version:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/mauricioTechDev/propcheck-ai/main/install.sh | VERSION=0.1.0 sh
+```
+
+### Download from GitHub Releases
+
+Pre-built binaries for macOS, Linux, and Windows are available on the [Releases page](https://github.com/mauricioTechDev/propcheck-ai/releases).
+
 ### From source
 
 ```bash
